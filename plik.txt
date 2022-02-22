@@ -1,0 +1,24 @@
+ Volume in drive F is czwarty
+ Volume Serial Number is F26C-FC5E
+
+ Directory of F:\Or_Sel
+
+21.02.2022  15:57    <DIR>          .
+21.02.2022  14:49    <DIR>          .idea
+21.02.2022  11:56    <DIR>          .pytest_cache
+21.02.2022  10:47               301 geckodriver.log
+21.02.2022  10:02        14ÿ969ÿ736 msedgedriver.exe
+21.02.2022  14:30    <DIR>          output
+21.02.2022  15:57                 0 plik.txt
+21.02.2022  14:38             1ÿ058 test1.py
+21.02.2022  15:49             1ÿ121 test2.py
+21.02.2022  15:57                84 test3.py
+21.02.2022  12:50             2ÿ196 test_przypadektestowyzmakowcem.py
+21.02.2022  14:07    <DIR>          venv
+21.02.2022  14:38                20 wymagania.txt
+21.02.2022  14:49           637ÿ040 wynik.png
+21.02.2022  15:48           135ÿ287 wynik_mysz_koniec.png
+21.02.2022  15:48           542ÿ389 wynik_mysz_pocz.png
+21.02.2022  14:17    <DIR>          __pycache__
+              11 File(s)     16ÿ289ÿ232 bytes
+               6 Dir(s)  49ÿ044ÿ217ÿ856 bytes free
