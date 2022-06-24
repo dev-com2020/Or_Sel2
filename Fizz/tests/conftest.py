@@ -1,6 +1,6 @@
 import pytest
 
-pytest_plugins = ["fizzbuzz.testing.fixtures"]
+pytest_plugins = ["Fizz.testing.fixtures"]
 
 
 def pytest_runtest_setup(item):

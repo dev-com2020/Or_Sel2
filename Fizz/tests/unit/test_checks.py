@@ -1,6 +1,6 @@
 import pytest
 
-from fizzbuzz import isfizz, isbuzz
+from fizbuzz import isfizz, isbuzz
 
 @pytest.mark.parametrize("n,res", [
     (1, False), 
