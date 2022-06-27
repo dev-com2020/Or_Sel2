@@ -14,12 +14,12 @@ main_page = driver.current_window_handle
 sleep(5)
 
 # click on the sign in tab
-driver.find_element(By.CLASS_NAME, 'sc-3o0n99-5 sc-bbkauy fmzINV').click()
+driver.find_element(By.LINK_TEXT, 'Sign up').click()
 
 sleep(5)
 
-# click to log in using facebook
-driver.find_element(By.XPATH, '//*[@id ="facebook-login-global"]/span').click()
+# click to log in using google
+driver.find_element(By.XPATH, '/html/body/div[4]/div/div[2]/section[2]/section/div[4]').click()
 
 # changing the handles to access login page
 for handle in driver.window_handles:
@@ -32,17 +32,18 @@ driver.switch_to.window(login_page)
 # user input for email and password
 print('Enter email id : ', end='')
 email = input().strip()
-print('Enter password : ', end='')
-password = input().strip()
 
 # enter the email
-driver.find_element_by_xpath('//*[@id ="email"]').send_keys(email)
-
+driver.find_element(By.XPATH, '//*[@id="identifierId"]').send_keys(email)
+driver.find_element(By.XPATH, '//*[@id="identifierNext"]/div/button/span').click()
 # enter the password
-driver.find_element_by_xpath('//*[@id ="pass"]').send_keys(password)
+sleep(3)
+print('Enter password : ', end='')
+password = input().strip()
+driver.find_element(By.XPATH, '//*[@id ="pass"]').send_keys(password)
 
 # click the login button
-driver.find_element_by_xpath('//*[@id ="u_0_0"]').click()
+driver.find_element(By.XPATH, '//*[@id ="u_0_0"]').click()
 
 # change control to main page
 driver.switch_to.window(main_page)
