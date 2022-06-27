@@ -9,30 +9,41 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.webdriver.support import expected_conditions as EC
+
 
 class Test1111():
-  def setup_method(self, method):
-    self.driver = webdriver.Chrome()
-    self.vars = {}
-  
-  def teardown_method(self, method):
-    self.driver.quit()
-  
-  def test_1111(self):
-    self.driver.get("https://www.google.pl/")
-    self.driver.set_window_size(945, 1012)
-    self.driver.find_element(By.CSS_SELECTOR, "#L2AGLb > .QS5gu").click()
-    self.driver.find_element(By.NAME, "q").click()
-    self.driver.find_element(By.NAME, "q").send_keys("bilety do kina")
-    self.driver.find_element(By.NAME, "q").send_keys(Keys.DOWN)
-    self.driver.find_element(By.NAME, "q").send_keys(Keys.DOWN)
-    time.sleep(3)
-    self.driver.find_element(By.NAME, "q").send_keys(Keys.DOWN)
-    self.driver.find_element(By.NAME, "q").send_keys(Keys.DOWN)
-    self.driver.find_element(By.NAME, "q").send_keys(Keys.DOWN)
-    time.sleep(3)
-    # self.driver.find_element(By.NAME, "q").send_keys("bilety do kina cena")
-    self.driver.find_element(By.NAME, "q").send_keys(Keys.ENTER)
-    time.sleep(10)
-    self.driver.close()
-  
+    def setup_method(self, method):
+        self.driver = webdriver.Chrome()
+        self.vars = {}
+
+    def teardown_method(self, method):
+        self.driver.quit()
+
+    def test_1111(self):
+        self.driver.get("https://www.google.pl/")
+        self.driver.set_window_size(945, 1012)
+        self.driver.find_element(By.CSS_SELECTOR, "#L2AGLb > .QS5gu").click()
+        self.driver.find_element(By.NAME, "q").click()
+        self.driver.find_element(By.NAME, "q").send_keys("bilety do kina")
+        self.driver.find_element(By.NAME, "q").send_keys(Keys.DOWN)
+        self.driver.find_element(By.NAME, "q").send_keys(Keys.DOWN)
+        time.sleep(3)
+        self.driver.find_element(By.NAME, "q").send_keys(Keys.DOWN)
+        self.driver.find_element(By.NAME, "q").send_keys(Keys.DOWN)
+        self.driver.find_element(By.NAME, "q").send_keys(Keys.DOWN)
+        self.driver.implicitly_wait(5)
+        self.driver.find_element(By.NAME, "q").send_keys(Keys.ENTER)
+        try:
+            WebDriverWait(self.driver, 5).until(
+                EC.presence_of_element_located((By.PARTIAL_LINK_TEXT, "bilety do kina"))
+            )
+            self.driver.find_element(By.PARTIAL_LINK_TEXT, "bilety do kina").screenshot("zad2.jpg")
+        finally:
+            # else quit
+            self.driver.quit()
+
+        # time.sleep(3)
+        # self.driver.find_element(By.NAME, "q").send_keys(Keys.ENTER)
+        # time.sleep(3)
+        # self.driver.close()

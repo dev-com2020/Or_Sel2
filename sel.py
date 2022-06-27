@@ -1,6 +1,8 @@
-# from selenium import webdriver
-# from selenium.webdriver.chrome.service import Service
-# from webdriver_manager.chrome import ChromeDriverManager
+import time
+
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 #
 # service = Service(executable_path=ChromeDriverManager().install())
 # driver = webdriver.Chrome(service=service)
@@ -9,6 +11,7 @@
 from selenium import webdriver
 
 driver = webdriver.Chrome()
-driver.get("http://selenium.dev")
-driver.quit()
+driver.get("https://google.pl")
+time.sleep(15)
+# driver.quit()
 
