@@ -2,6 +2,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+
 class Test_2:
     def test(self):
         driver = webdriver.Chrome()
@@ -18,10 +19,10 @@ class Test_2:
 
         driver.get('https://oknoplast.com.pl')
         time.sleep(2)
-        driver.find_element(By.ID,'CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll').click()
+        driver.find_element(By.ID, 'CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll').click()
         time.sleep(2)
-        driver.find_element(By.LINK_TEXT,"Gdzie kupić?").click()
+        driver.find_element(By.LINK_TEXT, "Gdzie kupić?").click()
         time.sleep(2)
-        location_icon = driver.find_element(By.ID, "geoLocation")
+        location_icon = driver.find_element(By.XPATH, '//*[@id="geoLocation"]')
         location_icon.click()
         time.sleep(3)
