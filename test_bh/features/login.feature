@@ -2,13 +2,15 @@ Feature: sign in to e-mail account
   As a user I want to log in
   and check my emails
 
-  Scenario Outline: Log in with valid data
-    Given user is on Poczta Onet website
-    When user fills in the Sign In form <login> and <pass> and submits it
-    Then User can see email list
+  Scenario Outline: Perform searches using few words
+    Given user is on automationpractice website
+    When user fills in the Search form <search> and submits it
+    Then User can see search result, and take a screenshot with <num> number
 
-    Examples: login
-      | login    | pass  |
-      | Mobile   | 1@230 |
-      | Computer | 36#00 |
-      | Notebook | 799$9 |
+    Examples: question
+      | search | num |
+      | drees  | 1   |
+      | tshirt | 2   |
+      | blouse | 3   |
+      | summer | 4   |
+
